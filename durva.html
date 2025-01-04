@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <mark id="my" style="color: rgb(242, 255, 0); text-shadow: 1px 1px 1px black; font-family: cursive; font-size: 30px; background-color: rgba(183, 0, 255, 0.375);  text-decoration: underline;"></mark>
+    <em id="my1" style="color: rgb(242, 255, 0); text-shadow: 1px 1px 1px black; font-family: cursive; font-size: 30px; background-color: rgba(183, 0, 255, 0.375);  text-decoration: underline;"></em>
+    <i id="my2" style="color: rgb(242, 255, 0); text-shadow: 1px 1px 1px black; font-family: cursive; font-size: 30px; background-color: rgba(183, 0, 255, 0.375);  text-decoration: underline;"></i>
+
+    <script>
+
+        async function add(a, b) {
+                let response = await a + b;
+                display(response);
+
+            }
+
+            function display(some) {
+                document.getElementById("my1").innerHTML = "The answer is "+some + ".<br><br><br>";
+            }
+
+            add(0, 25);
+
+
+             function myDisplayer(some) {
+                    document.getElementById("my2").innerHTML = some;
+
+                }
+
+                function sum(a, b) {
+                    var sum = a + b;
+                    myDisplayer(sum);
+
+                }
+
+                let myPromise = new Promise(function (myResolve, myReject) {
+                    let x = 9;
+                    if (x == 0) {
+                        myResolve("fine");
+
+                    }
+
+                    else {
+                        myReject("this is wrong ");
+                    }
+                });
+
+                myPromise.then(
+                    function (value) { sum(6, 6); },
+                    function (error) { sum(error); }
+                );
+
+
+        var myObj = { name: "durva ", age: 15 , grade: " 11 standerd !♥️ <br><br><br>" };
+        var myJSON = JSON.stringify(myObj);
+
+        var newObj = JSON.parse(myJSON);
+
+        document.getElementById("my").innerHTML =  "My name is "+newObj.name +"My age is "+ newObj.age +" I study in "+ newObj.grade ;
+    </script>
+</body>
+
+</html>
